@@ -32,6 +32,19 @@ const Calendar = (() => {
   const firstDayOfMonth = date => new Date(date.getYear(), date.getMonth(), 1).getDay();
   const daysOfMonth = date => new Date(date.getYear(), date.getMonth() + 1, 0).getDate();
 
+  // visual rendering of calendar
+  const renderToday = date => {
+    renderNumDay(date);
+    renderWordDay(date);
+  };
+  const renderNumDay = date => {
+    let numDay = numDay(date);
+    $('#numDay').html(numDay);
+  };
+  const renderWordDay = date => {
+    let wordDay = wordDay(date);
+    $('#wordDay').html(wordDay);
+  };
   return Object.assign({}, {numDay: numDay}, {wordDay: wordDay}, {DAYSOFWEEK: DAYSOFWEEK})
 })()
 
