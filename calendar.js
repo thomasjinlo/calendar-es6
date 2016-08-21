@@ -34,15 +34,13 @@ const Calendar = (() => {
 
   // visual rendering of calendar
   const renderToday = date => {
-    renderNumDay(date);
-    renderWordDay(date);
+    renderNumDay(numDay(date));
+    renderWordDay(wordDay(date));
   };
-  const renderNumDay = date => {
-    let numDay = numDay(date);
+  const renderNumDay = numDay => {
     $('#numDay').html(numDay);
   };
-  const renderWordDay = date => {
-    let wordDay = wordDay(date);
+  const renderWordDay = wordDay => {
     $('#wordDay').html(wordDay);
   };
   return Object.assign({}, {numDay: numDay}, {wordDay: wordDay}, {DAYSOFWEEK: DAYSOFWEEK})
