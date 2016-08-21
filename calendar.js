@@ -1,6 +1,6 @@
 const Calendar = (() => {
-
-  const daysOfWeek = [
+  // constants
+  const DAYSOFWEEK = [
     {sh: 'Su', lg: 'Sunday'},
     {sh: 'Mo', lg: 'Monday'},
     {sh: 'Tu', lg: 'Tuesday'},
@@ -10,6 +10,21 @@ const Calendar = (() => {
     {sh: 'Sa', lg: 'Saturday'}
   ];
 
+  const MONTHS = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'November',
+    'December'
+  ];
+
+  // pure functions to get data
   const numDay = date => date.getDate();
   const wordDay = (date, daysOfWeek) => daysOfWeek[date.getDay()]['lg'];
 
