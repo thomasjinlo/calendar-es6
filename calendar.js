@@ -43,7 +43,15 @@ const Calendar = (() => {
   const renderWordDay = wordDay => {
     $('#wordDay').html(wordDay);
   };
-  return Object.assign({}, {numDay: numDay}, {wordDay: wordDay}, {DAYSOFWEEK: DAYSOFWEEK})
+  // factory
+  const initializer = date => {
+    const init = date => {
+      renderToday(date);
+    };
+    return {init: init}
+  };
+
+  return Object.assign({}, initializer());
 })()
 
 
