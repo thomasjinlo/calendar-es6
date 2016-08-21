@@ -26,7 +26,11 @@ const Calendar = (() => {
 
   // pure functions to get data
   const numDay = date => date.getDate();
-  const wordDay = (date, daysOfWeek) => daysOfWeek[date.getDay()]['lg'];
+  const wordDay = date => DAYSOFWEEK[date.getDay()]['lg'];
+  const month = date => MONTHS[date.getMonth()];
+  const year = date => date.getFullYear();
+  const firstDayOfMonth = date => new Date(date.getYear(), date.getMonth(), 1).getDay();
+  const daysOfMonth = date => new Date(date.getYear(), date.getMonth() + 1, 0).getDate();
 
   return Object.assign({}, {numDay: numDay}, {wordDay: wordDay}, {daysOfWeek: daysOfWeek})
 })()
