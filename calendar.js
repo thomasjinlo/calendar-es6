@@ -56,7 +56,6 @@ const Calendar = (() => {
 
 
 $(document).ready(() => {
-  let date = new Date()
-  console.log(Calendar.numDay(date))
-  console.log(Calendar.wordDay(date, Calendar.DAYSOFWEEK))
+  let date = new Date();
+  Calendar.init(date)
 })
