@@ -1,0 +1,54 @@
+body {
+  text-align: center;
+}
+
+#app {
+  border: 1px solid;
+  margin: 0 auto;
+  padding: 20px;
+  display: inline-block;
+}
+
+#today {
+  width: 300px;
+  height: 485px;
+  border: 1px solid;
+  text-align: center;
+  display: inline-block;
+}
+
+#calendarContainer {
+  width: 450px;
+  height: 485px;
+  border: 1px solid;
+  text-align: center;
+  display: inline-block;
+}
+
+#numDay {
+  width: 80px;
+  height: 80px;
+  margin: 50px auto 0 auto;
+  border: 1px solid;
+}
+
+#wordDay {
+  width: 240px;
+  height: 80px;
+  margin: 40% auto 0 auto;
+  border: 1px solid;
+}
+
+#monthYear {
+  width: 400px;
+  height: 80px;
+  margin: 50px auto 0 auto;
+  border: 1px solid;
+}
+
+#calendar {
+  width: 400px;
+  height: 320px;
+  margin: 20px auto 0 auto;
+  border: 1px solid;
+}
