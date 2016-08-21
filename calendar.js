@@ -36,7 +36,8 @@ const Calendar = (() => {
 })()
 
 
-$(document).ready((date = new Date()) => {
+$(document).ready(() => {
+  let date = new Date()
   console.log(Calendar.numDay(date))
-  console.log(Calendar.wordDay(date, Calendar.daysOfWeek))
+  console.log(Calendar.wordDay(date, Calendar.DAYSOFWEEK))
 })
