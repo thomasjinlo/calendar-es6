@@ -32,7 +32,7 @@ const Calendar = (() => {
   const firstDayOfMonth = date => new Date(date.getYear(), date.getMonth(), 1).getDay();
   const daysOfMonth = date => new Date(date.getYear(), date.getMonth() + 1, 0).getDate();
 
-  return Object.assign({}, {numDay: numDay}, {wordDay: wordDay}, {daysOfWeek: daysOfWeek})
+  return Object.assign({}, {numDay: numDay}, {wordDay: wordDay}, {DAYSOFWEEK: DAYSOFWEEK})
 })()
 
 
