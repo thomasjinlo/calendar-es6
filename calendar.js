@@ -46,10 +46,18 @@ const Calendar = (() => {
   const renderWordDay = wordDay => {
     $('#wordDay').html(wordDay);
   };
+
+  const renderMonthYear = date => {
+    let monthYear = `${month(date)} ${year(date)}`
+    $('#monthYear').html(monthYear);
+  };
+
+
   // factory
   const initializer = date => {
     const init = date => {
       renderToday(date);
+      renderMonthYear(date);
     };
     return {init: init}
   };
