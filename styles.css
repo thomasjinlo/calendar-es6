@@ -51,3 +51,19 @@ body {
   margin: 20px auto 0 auto;
   border: 1px solid;
 }
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th {
+  border: 1px solid purple;
+  margin: 0px;
+}
+
+td {
+  border: 1px solid blue;
+  margin: 0px;
+  height: 40px;
+}
