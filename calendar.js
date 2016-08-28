@@ -83,7 +83,7 @@ const Calendar = (() => {
   const makeSquares = times => {
     const square = (args) => {
       let $td = $('<td />');
-      $td.data('idx', args.get('idx')).addClass('square').html(args.get('idx'))
+      $td.data('day', args.get('idx')).addClass('square').html(args.get('idx'))
       $(args.get('body')).append($td)
       return args.updateIn(['idx'], idx => idx + 1)
     }
