@@ -69,10 +69,20 @@ const Calendar = (() => {
     return repeat (times) (emptySquare) ($('tbody'))
   }
 
+  const makeSquares = times => {
+    const square = (args) => {
+      let $td = $('<td />');
+      $td.data('idx', args.get('idx')).addClass('square').html(args.get('idx'))
+      $(args.get('body')).append($td)
+      return args.updateIn(['idx'], idx => idx + 1)
+    }
+    return repeat (times) (square) (Map({idx: 1, body: $('tbody')}))
+  }
+
   // generate table columns
   const generateTable = date => {
-    console.log("TODAY IS", firstDayOfMonth(date))
     makeEmptySquares(firstDayOfMonth(date))
+    makeSquares(daysOfMonth(date))
   }
 
   // factory
