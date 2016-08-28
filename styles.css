@@ -58,12 +58,21 @@ table {
 }
 
 th {
+  float: left;
   border: 1px solid purple;
-  margin: 0px;
+  margin: 0.5px;
+  height: 47.5px;
+  width: 51.5px;
 }
 
 td {
+  float: left;
+  border: 1px solid transparent;
+  margin: 0.5px;
+  height: 47.5px;
+  width: 51.5px
+}
+
+.square {
   border: 1px solid blue;
-  margin: 0px;
-  height: 40px;
 }
