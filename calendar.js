@@ -52,12 +52,24 @@ const Calendar = (() => {
     $('#monthYear').html(monthYear);
   };
 
+  // generate table columns
+  const generateTable = () => {
+    let $tbody = $('tbody');
+    for (var i = 0; i < 6; i++) {
+      let $row = $('<tr />');
+      for (var j = 0; j < 7; j++) {
+        $row.append($('<td />'))
+      }
+      $tbody.append($row)
+    }
+  }
 
   // factory
   const initializer = date => {
     const init = date => {
       renderToday(date);
       renderMonthYear(date);
+      generateTable();
     };
     return {init: init}
   };
