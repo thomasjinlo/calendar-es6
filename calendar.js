@@ -68,6 +68,13 @@ const Calendar = (() => {
       $(body).append($td)
       return body
     }
+    return repeat (times) (emptySquare) ($('tbody'))
+  }
+
+  // generate table columns
+  const generateTable = date => {
+    console.log("TODAY IS", firstDayOfMonth(date))
+    makeEmptySquares(firstDayOfMonth(date))
   }
 
   // factory
@@ -75,7 +82,7 @@ const Calendar = (() => {
     const init = date => {
       renderToday(date);
       renderMonthYear(date);
-      generateTable();
+      generateTable(date);
     };
     return {init: init}
   };
