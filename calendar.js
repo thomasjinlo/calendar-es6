@@ -52,15 +52,21 @@ const Calendar = (() => {
     $('#monthYear').html(monthYear);
   };
 
-  // generate table columns
-  const generateTable = () => {
-    let $tbody = $('tbody');
-    for (var i = 0; i < 6; i++) {
-      let $row = $('<tr />');
-      for (var j = 0; j < 7; j++) {
-        $row.append($('<td />'))
-      }
-      $tbody.append($row)
+  // helper functions
+  const repeat = times => action => arg => {
+    if (times > 0)
+      return repeat (times - 1) (action) (action(times - 1, arg))
+    else
+      return arg
+  }
+
+  const makeEmptySquares = times => {
+    const emptySquare = (index, body) => {
+      let $td = $('<td />');
+      $td.data('index', index)
+      console.log("Here", body.children())
+      $(body).append($td)
+      return body
     }
   }
 
