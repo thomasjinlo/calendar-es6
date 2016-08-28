@@ -63,8 +63,6 @@ const Calendar = (() => {
   const makeEmptySquares = times => {
     const emptySquare = (body) => {
       let $td = $('<td />');
-      $td.data('index', index)
-      console.log("Here", body.children())
       $(body).append($td)
       return body
     }
