@@ -96,12 +96,23 @@ const Calendar = (() => {
     makeSquares(daysOfMonth(date))
   }
 
+  // set event handlers
+  const makeSquaresClickable = date => {
+    const changeDate = date => e => {
+      let newDate = new Date(date.getFullYear(), date.getMonth(), $(e.target).data('day'));
+      renderNewDate(newDate)
+    }
+    // delegate handlers to container
+    $('tbody').delegate('.square', 'click', changeDate(date))
+  }
+
   // factory
   const initializer = date => {
     const init = date => {
       renderToday(date);
       renderMonthYear(date);
       generateTable(date);
+      makeSquaresClickable(date);
     };
     return {init: init}
   };
