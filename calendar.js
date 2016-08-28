@@ -32,8 +32,8 @@ const Calendar = (() => {
   const wordDay = date => DAYSOFWEEK.getIn([date.getDay(), 'lg']);
   const month = date => MONTHS.get(date.getMonth());
   const year = date => date.getFullYear();
-  const firstDayOfMonth = date => new Date(date.getYear(), date.getMonth(), 1).getDay();
-  const daysOfMonth = date => new Date(date.getYear(), date.getMonth() + 1, 0).getDate();
+  const firstDayOfMonth = date => new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+  const daysOfMonth = date => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 
   // visual rendering of calendar
   const renderToday = date => {
