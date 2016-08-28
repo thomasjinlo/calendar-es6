@@ -52,6 +52,17 @@ const Calendar = (() => {
     $('#monthYear').html(monthYear);
   };
 
+  const renderNewDate = newDate => {
+    renderToday(newDate)
+    renderMonthYear(newDate)
+    resetTable(newDate)
+  }
+
+  const resetTable = newDate => {
+    $('tbody').children().remove()
+    generateTable(newDate)
+  }
+
   // helper functions
   const repeat = times => action => arg => {
     if (times > 0)
