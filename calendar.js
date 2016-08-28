@@ -55,13 +55,13 @@ const Calendar = (() => {
   // helper functions
   const repeat = times => action => arg => {
     if (times > 0)
-      return repeat (times - 1) (action) (action(times - 1, arg))
+      return repeat (times - 1) (action) (action(arg))
     else
       return arg
   }
 
   const makeEmptySquares = times => {
-    const emptySquare = (index, body) => {
+    const emptySquare = (body) => {
       let $td = $('<td />');
       $td.data('index', index)
       console.log("Here", body.children())
