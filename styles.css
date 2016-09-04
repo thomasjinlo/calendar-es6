@@ -76,3 +76,16 @@ td {
 .square {
   border: 1px solid blue;
 }
+
+.active {
+  border: 1px solid red;
+  color: red;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
