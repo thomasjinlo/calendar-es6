@@ -71,7 +71,6 @@ const Calendar = (() => {
     makeSquares(daysOfMonth(date))
     renderActiveDate(date)
   }
-
   const makeEmptySquares = times => {
     const emptySquare = (body) => {
       let $td = $('<td />');
@@ -80,11 +79,10 @@ const Calendar = (() => {
     }
     return repeat (times) (emptySquare) ($('tbody'))
   }
-
   const makeSquares = times => {
     const square = (args) => {
       let $td = $('<td />');
-      $td.data('day', args.get('idx')).addClass('square').html(args.get('idx'))
+      $td.attr('data-day', args.get('idx')).addClass('square').html(args.get('idx'))
       $(args.get('body')).append($td)
       return args.updateIn(['idx'], idx => idx + 1)
     }
