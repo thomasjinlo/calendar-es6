@@ -106,6 +106,17 @@ const Calendar = (() => {
     // delegate handlers to container
     $('tbody').on('click', '.square', changeDate(date))
   }
+  const changeByMonth = date => {
+    const changeDate = (date, month) => e => {
+      let newDate = new Date(date.getFullYear(), date.getMonth() + month, date.getDate());
+      renderNewDate(newDate)
+      resetEvent(newDate)
+    }
+    $('.left, .right').off()
+    $('.left').click(changeDate(date, -1))
+    $('.right').click(changeDate(date, 1))
+  }
+  const resetEvent = newDate => changeByMonth(newDate)
 
   // factory
   const initializer = date => {
