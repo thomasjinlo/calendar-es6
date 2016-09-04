@@ -51,24 +51,25 @@ const Calendar = (() => {
     let monthYear = `${month(date)} ${year(date)}`
     $('#monthYear span').html(monthYear);
   };
-
+  const renderActiveDate = date => {
+    let today = date.getDate()
+    $(`.square[data-day=${today}]`).removeClass().addClass('active')
+  }
   const renderNewDate = newDate => {
     renderToday(newDate)
     renderMonthYear(newDate)
     resetTable(newDate)
+    renderActiveDate(newDate)
   }
-
   const resetTable = newDate => {
     $('tbody').children().remove()
     generateTable(newDate)
   }
 
-  // helper functions
-  const repeat = times => action => arg => {
-    if (times > 0)
-      return repeat (times - 1) (action) (action(arg))
-    else
-      return arg
+  const generateTable = date => {
+    makeEmptySquares(firstDayOfMonth(date))
+    makeSquares(daysOfMonth(date))
+    renderActiveDate(date)
   }
 
   const makeEmptySquares = times => {
