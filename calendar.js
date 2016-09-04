@@ -89,20 +89,22 @@ const Calendar = (() => {
     return repeat (times) (square) (Map({idx: 1, body: $('tbody')}))
   }
 
-  // generate table columns
-  const generateTable = date => {
-    makeEmptySquares(firstDayOfMonth(date))
-    makeSquares(daysOfMonth(date))
+  // helper functions
+  const repeat = times => action => arg => {
+    if (times > 0)
+      return repeat (times - 1) (action) (action(arg))
+    else
+      return arg
   }
 
   // set event handlers
-  const makeSquaresClickable = date => {
+  const changeByDay = date => {
     const changeDate = date => e => {
       let newDate = new Date(date.getFullYear(), date.getMonth(), $(e.target).data('day'));
       renderNewDate(newDate)
     }
     // delegate handlers to container
-    $('tbody').delegate('.square', 'click', changeDate(date))
+    $('tbody').on('click', '.square', changeDate(date))
   }
 
   // factory
