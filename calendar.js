@@ -23,6 +23,7 @@ const Calendar = (() => {
     'July',
     'August',
     'September',
+    'October',
     'November',
     'December'
   );
