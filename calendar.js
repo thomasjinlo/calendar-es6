@@ -124,7 +124,8 @@ const Calendar = (() => {
       renderToday(date);
       renderMonthYear(date);
       generateTable(date);
-      makeSquaresClickable(date);
+      changeByDay(date);
+      changeByMonth(date);
     };
     return {init: init}
   };
