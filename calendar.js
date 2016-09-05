@@ -30,8 +30,8 @@ const Calendar = (() => {
 
   // pure functions to get data
   const numDay = date => date.getDate();
-  const wordDay = date => DAYSOFWEEK.getIn([date.getDay(), 'lg']);
-  const month = date => MONTHS.get(date.getMonth());
+  const wordDay = (date, DAYSOFWEEK) => DAYSOFWEEK.getIn([date.getDay(), 'lg']);
+  const month = (date, MONTHS) => MONTHS.get(date.getMonth());
   const year = date => date.getFullYear();
   const firstDayOfMonth = date => new Date(date.getFullYear(), date.getMonth(), 1).getDay();
   const daysOfMonth = date => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
