@@ -116,7 +116,10 @@ const Calendar = (() => {
     $('.left').click(changeDate(date, -1))
     $('.right').click(changeDate(date, 1))
   }
-  const resetEvent = newDate => changeByMonth(newDate)
+  const resetEvent = newDate => {
+    changeByDay(newDate)
+    changeByMonth(newDate)
+  }
 
   // factory
   const initializer = date => {
